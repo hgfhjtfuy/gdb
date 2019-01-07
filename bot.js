@@ -33,139 +33,27 @@ client.login(process.env.BOT_TOKEN);
 
 
 
-client.on('message', msg => {
-    if (msg.content === 'هلا') {
-       msg.reply('هلابيك:heart: ');
-      }
+const invites = {};
+
+const wait = require('util').promisify(setTimeout);
+
+client.on('ready', () => {
+  wait(1000);
+
+  client.guilds.forEach(g => {
+    g.fetchInvites().then(guildInvites => {
+      invites[g.id] = guildInvites;
     });
+  });
+});
 
-
-
-client.on('message', message => {
-    var args = message.content.split(/[ ]+/)
-    if(message.content.includes('كسمك')){
-        message.delete()
-      message.channel.sendMessage("", {embed: {
-        title: "لا تسب",
-        color: 0x06DF00,
-        description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
-        footer: {
-          text: "🌟Five Stars🌟    [ !^мohαmε𝕯^!#4476      -     W͈̪̣AR NI̴̧͝GH̴̵T͇#4506 ]"
-        }
-      }}).then(msg => {msg.delete(10000)});
-                          }
- 
-     
-});
-client.on('message', message => {
-    var args = message.content.split(/[ ]+/)
-    if(message.content.includes('نيك')){
-        message.delete()
-      message.channel.sendMessage("", {embed: {
-        title: "لا تسب",
-        color: 0x06DF00,
-        description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
-        footer: {
-          text: "🌟Five Stars🌟    [ !^мohαmε𝕯^!#4476      -     W͈̪̣AR NI̴̧͝GH̴̵T͇#4506 ]"
-        }
-      }}).then(msg => {msg.delete(10000)});
-                          }
- 
-     
-});
-client.on('message', message => {
-    var args = message.content.split(/[ ]+/)
-    if(message.content.includes('عرص')){
-        message.delete()
-      message.channel.sendMessage("", {embed: {
-        title: "لا تسب",
-        color: 0x06DF00,
-        description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
-        footer: {
-          text: "🌟Five Stars🌟    [ !^мohαmε𝕯^!#4476      -     W͈̪̣AR NI̴̧͝GH̴̵T͇#4506 ]"
-        }
-      }}).then(msg => {msg.delete(10000)});
-                          }
- 
-     
-});
-client.on('message', message => {
-    var args = message.content.split(/[ ]+/)
-    if(message.content.includes('متناك')){
-        message.delete()
-      message.channel.sendMessage("", {embed: {
-        title: "لا تسب",
-        color: 0x06DF00,
-        description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
-        footer: {
-          text: "🌟Five Stars🌟    [ !^мohαmε𝕯^!#4476      -     W͈̪̣AR NI̴̧͝GH̴̵T͇#4506 ]"
-        }
-      }}).then(msg => {msg.delete(10000)});
-                          }
- 
-     
-});
-client.on('message', message => {
-    var args = message.content.split(/[ ]+/)
-    if(message.content.includes('احا')){
-        message.delete()
-      message.channel.sendMessage("", {embed: {
-        title: "لا تسب",
-        color: 0x06DF00,
-        description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
-        footer: {
-          text: "🌟Five Stars🌟    [ !^мohαmε𝕯^!#4476      -     W͈̪̣AR NI̴̧͝GH̴̵T͇#4506 ]"
-        }
-      }}).then(msg => {msg.delete(10000)});
-                          }
- 
-     
-});
-client.on('message', message => {
-    var args = message.content.split(/[ ]+/)
-    if(message.content.includes('a7a')){
-        message.delete()
-      message.channel.sendMessage("", {embed: {
-        title: "لا تسب",
-        color: 0x06DF00,
-        description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
-        footer: {
-          text: "🌟Five Stars🌟    [ !^мohαmε𝕯^!#4476      -     W͈̪̣AR NI̴̧͝GH̴̵T͇#4506 ]"
-        }
-      }}).then(msg => {msg.delete(10000)});
-                          }
- 
-     
-});
-client.on('message', message => {
-    var args = message.content.split(/[ ]+/)
-    if(message.content.includes('كوسمك')){
-        message.delete()
-      message.channel.sendMessage("", {embed: {
-        title: "لا تسب",
-        color: 0x06DF00,
-        description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
-        footer: {
-          text: "🌟Five Stars🌟    [ !^мohαmε𝕯^!#4476      -     W͈̪̣AR NI̴̧͝GH̴̵T͇#4506 ]"
-        }
-      }}).then(msg => {msg.delete(10000)});
-                          }
- 
-     
-});
-client.on('message', message => {
-    var args = message.content.split(/[ ]+/)
-    if(message.content.includes('خول')){
-        message.delete()
-      message.channel.sendMessage("", {embed: {
-        title: "لا تسب",
-        color: 0x06DF00,
-        description: "مَّا يَلْفِظُ مِن قَوْلٍ إِلَّا لَدَيْهِ رَقِيبٌ عَتِيدٌ ",
-        footer: {
-          text: "🌟Five Stars🌟    [ !^мohαmε𝕯^!#4476      -     W͈̪̣AR NI̴̧͝GH̴̵T͇#4506 ]"
-        }
-      }}).then(msg => {msg.delete(10000)});
-                          }
- 
-     
+client.on('guildMemberAdd', member => {
+  member.guild.fetchInvites().then(guildInvites => {
+    const ei = invites[member.guild.id];
+    invites[member.guild.id] = guildInvites;
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+    const inviter = client.users.get(invite.inviter.id);
+    const logChannel = member.guild.channels.find(channel => channel.name === "general");
+    logChannel.send(`${member} Invited by: <@${inviter.id}>`);
+  });
 });
